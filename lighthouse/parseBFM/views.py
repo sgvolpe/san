@@ -11,7 +11,7 @@ from django.views import generic
 
 class CreateBFM_Parse(LoginRequiredMixin,SelectRelatedMixin,generic.CreateView):
     model = models.BFM_Parse
-    template_name = "BFM_Parse/BFM_Parse_form.html"
+    template_name = "BFM_parse/BFM_Parse_form.html"
     fields = ('bfm_rs_file',)
 
     #def form_valid(self, form):
@@ -27,13 +27,13 @@ class CreateBFM_Parse(LoginRequiredMixin,SelectRelatedMixin,generic.CreateView):
 class BFM_ParseDetail(SelectRelatedMixin, generic.DetailView):
     model = models.BFM_Parse
     select_related = ()
-    template_name = "BFM_Parse/BFM_Parse_detail.html"
+    template_name = "BFM_parse/BFM_Parse_detail.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         print ('----')
 
         #context['app'] = dashboard_app.getapp(df_path)
-        bfm_rs_json = self.object.parse()        
+        bfm_rs_json = self.object.parse()
         context['bfm_rs'] =bfm_rs_json
         return context

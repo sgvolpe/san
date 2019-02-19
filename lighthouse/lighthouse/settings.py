@@ -54,6 +54,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'bootstrap3',
     'parseBFM',
+    'accounts',
 
 
 
@@ -79,7 +80,7 @@ WSGI_APPLICATION = 'lighthouse.wsgi.application'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),'templates','parseBFM.templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),'templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,6 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -125,4 +127,20 @@ STATICFILES_DIRS = [
 
     '/images/',
 
+]
+
+
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
 ]
