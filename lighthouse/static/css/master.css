@@ -1,11 +1,13 @@
 
 body {
     background: #edf0f2;
+
     //dark#3d3e3e
 }
 
 .navbar{
-  //background-color:#00aa76;
+  background-color:white;
+  color:black;
   //font-size: 1.4em ;
   //border-width: 1px;
   //border-style:solid;

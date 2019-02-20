@@ -24,7 +24,7 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['sgvolpe2.eu.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','sgvolpe2.eu.pythonanywhere.com']
 
 
 
@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'bootstrap3',
     'parseBFM',
     'accounts',

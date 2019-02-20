@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load static %}
+{% load staticfiles %}
+
+  {% block content %}
+    <div class="container justify-center">
+      <h4>Parse BFM JSON RESPONSE</h4>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-success btn-large">Post</button>
+      </form>
+    </div>
+  {% endblock %}

@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+  <div class="container">
+    <h1>Several Same BFM List</h1>
+    <div class="col-md-8">
+      <a href="{% url 'parseBFM:CreateBFM_Parse' %}">Create New</a>
+    <div/>
+    <div class="col-md-8">
+    	<ul>
+        {{BFM_Parse_list}}
+        {% for BFM_Parse in BFM_Parse_list %}
+        <li class="group li-with-bullet">
+					 <a href="{% url 'parseBFM:BFM_ParseDetail' pk=BFM_Parse.pk %}">{{BFM_Parse.id}}</a>
+				</li>
+    	{% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
